@@ -1,0 +1,20 @@
+<%- include("partials/header"); -%>
+
+<style>
+    .hundred-ch, a {
+        display: inline-block;
+    }
+</style>
+
+<h1>HOME</h1>
+<p> <%= home_Content %> </p>
+
+<% new_post.forEach(function(post) {  %>
+    <h3> <%= post.title %>   </h3>
+    <p class="hundred-ch">  <%= post.content.substring(0, 100)  + " ..." %> </p>
+    <a href="/posts/<%=post._id%>">Read More</a>
+<% })  %>
+
+
+
+<%- include("partials/footer"); -%>
